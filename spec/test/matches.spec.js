@@ -1,6 +1,9 @@
 var dimensionParser = require('../../index');
 
 describe('General', function() {
+	it('can match LxWxH dimensions', function() {
+		expect(dimensionParser('17 x 11 x 4 in', 'in','LxWxH')).toEqual({length: '17.00', width: '11.00', height: '4.00'});
+	});
 	it('can match simple dimensions', function() {
 		expect(dimensionParser('h: 29,20 w: 26,30 cm', 'in')).toEqual({width: '10.35', height: '11.50'});
 		expect(dimensionParser('h: 29,20 w: 26,30 d: 60,1 cm', 'in')).toEqual({width : '10.35', height : '11.50', length : '23.66'});

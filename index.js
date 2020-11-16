@@ -306,6 +306,18 @@ var Parser = function (string, unitType, format, strict) {
             if (match.length) {
                 result.height = match.length.toFixed(2);
             }
+        } else if (format === 'LxWxH') {
+            if (match.width) {
+                result.length = match.width.toFixed(2);
+            }
+
+            if (match.height) {
+                result.width = match.height.toFixed(2);
+            }
+
+            if (match.length) {
+                result.height = match.length.toFixed(2);
+            }
         }
 
 		return result;
